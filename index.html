@@ -50,7 +50,119 @@
     .site-nav-links a.nav-active { color: var(--navy); font-weight: 700; }
     .site-nav-links .nav-cta { background: var(--accent-2); color: #fff !important; font-weight: 800; padding: 7px 14px; box-shadow: 0 4px 12px rgba(238,66,102,0.2); }
     .site-nav-links .nav-cta:hover { background: #d63057; }
-    @media (max-width: 720px) { .site-nav-brand span { display: none; } .site-nav-links a:not(.nav-cta) { display: none; } }
+    .mobile-menu-btn{
+  width:42px;
+  height:42px;
+  border:none;
+  border-radius:12px;
+  background:rgba(255,255,255,.72);
+  backdrop-filter:blur(10px);
+  border:1px solid rgba(20,33,61,.06);
+  box-shadow:0 2px 8px rgba(20,33,61,.04);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  color:var(--accent);
+  font-size:22px;
+  flex-shrink:0;
+  transition:all .18s ease;
+}
+
+.mobile-menu-btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 4px 12px rgba(20,33,61,.08);
+}
+
+.mobile-drawer{
+  max-height:0;
+  overflow:hidden;
+  opacity:0;
+  transition:max-height .25s ease, opacity .2s ease;
+}
+
+.mobile-drawer.open{
+  max-height:320px;
+  opacity:1;
+  padding:8px 0 14px;
+}
+
+.mobile-drawer a{
+  display:block;
+  padding:14px 16px;
+  margin-bottom:8px;
+  border-radius:14px;
+  background:#fff;
+  color:var(--navy);
+  font-size:14px;
+  font-weight:700;
+  box-shadow:0 2px 8px rgba(20,33,61,.04);
+  transition:all .18s ease;
+}
+
+.mobile-drawer a:hover{
+  transform:translateY(-1px);
+}
+
+.mobile-drawer .drawer-cta{
+  background:#f97316;
+  color:#fff;
+}
+
+.site-nav-inner{
+  height:54px;
+}
+
+.answer-cta{
+  margin-top:auto;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  width:100%;
+  padding:11px 16px;
+  border-radius:999px;
+  background:#f97316;
+  color:#fff;
+  font-size:13px;
+  font-weight:800;
+  line-height:1;
+  box-shadow:0 10px 24px rgba(249,115,22,.18);
+}
+
+.btn-primary{
+  background:#f97316;
+  color:#fff;
+  box-shadow:0 10px 24px rgba(249,115,22,.18);
+}
+
+.btn-primary:hover{
+  box-shadow:0 14px 30px rgba(249,115,22,.24);
+}
+
+@media (max-width: 720px) {
+
+  .site-nav-links{
+    display:none;
+  }
+
+  .mobile-menu-btn{
+    display:flex;
+  }
+
+  .site-nav-brand span{
+    display:block;
+  }
+
+  .hero{
+    padding-top:34px;
+  }
+
+  .answer-grid{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+}
     /* PAGE */
     .hero { padding: 56px 0 44px; background: rgba(255,255,255,0.82); text-align: center; }
     .hero-mark { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 24px; }
@@ -64,11 +176,11 @@
     .hero-question-label { font-family: "Fraunces", serif; font-size: clamp(1.7rem, 3vw, 2.4rem); line-height: 1.04; letter-spacing: -0.03em; font-weight: 700; color: var(--navy); margin-bottom: 14px; text-align: center; }
     .answer-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; max-width: 960px; margin: 0 auto; }
     .answer-card { border: 1px solid rgba(84,13,110,0.14); border-radius: 22px; background: var(--card); padding: 20px 16px 18px; cursor: pointer; text-align: center; transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, background 0.18s ease; box-shadow: var(--shadow-soft); min-height: 196px; display: flex; flex-direction: column; align-items: center; width: 100%; }
-    .answer-card:hover { transform: translateY(-2px); border-color: rgba(249,115,22,0.28); box-shadow: var(--shadow-hover); background: #fff9fb; }
+    .answer-card:hover { transform: translateY(-2px); border-color: rgba(249,115,22,0.28); box-shadow: var(--shadow-hover); background: #fff9f5; }
     .answer-icon { width: 76px; height: 76px; margin: 0 auto 12px; display: flex; align-items: center; justify-content: center; }
     .answer-title { font-size: 17px; font-weight: 800; color: var(--navy); line-height: 1.2; margin-bottom: 6px; }
     .answer-range { font-size: 13px; font-weight: 700; color: var(--accent); margin: 6px 0 10px; letter-spacing: 0.01em; }
-    .answer-cta { margin-top: auto; display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 11px 16px; border-radius: 999px; background: #FF3C38; color: #fff; font-size: 13px; font-weight: 800; line-height: 1; box-shadow: 0 10px 24px rgba(255,140,66,0.14); }
+    .answer-cta { margin-top: auto; display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 11px 16px; border-radius: 999px; background: #f97316; color: #fff; font-size: 13px; font-weight: 800; line-height: 1; box-shadow: 0 10px 24px rgba(255,140,66,0.14); }
     .section { padding: 36px 0; text-align: center; background: #ffffff; }
     .section-head { margin-bottom: 22px; text-align: center; }
     .section-kicker { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent-2); margin-bottom: 6px; }
@@ -83,7 +195,7 @@
     .bottom-cta-wrap .btn { display: block; margin: 0 auto; width: fit-content; }
     .btn { appearance: none; border: none; cursor: pointer; border-radius: 999px; padding: 15px 28px; font-size: 15px; font-weight: 800; transition: transform 0.16s ease, box-shadow 0.16s ease; }
     .btn:hover { transform: translateY(-1px); }
-    .btn-primary { background: #FF3C38; color: #fff; box-shadow: 0 10px 24px rgba(255,60,56,0.18); }
+    .btn-primary { background: #f97316; color: #fff; box-shadow: 0 10px 24px rgba(249,115,22,.18); }
     .btn-primary:hover { box-shadow: 0 14px 30px rgba(249,115,22,0.24); }
     .footer { background: #fff; border-top: 1px solid var(--border); padding: 24px 0 40px; }
     .footer-inner { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: var(--navy-soft); font-size: 14px; }
@@ -109,51 +221,83 @@
 </head>
 <body>
 
-  <nav class="site-nav">
-    <div class="container site-nav-inner">
-      <a href="https://heating.hvacinstallcosts.com" class="site-nav-brand">
-        <svg height="26" viewBox="0 0 56 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs><linearGradient id="navGrad" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#7b2ff7"/><stop offset="100%" stop-color="#f97316"/></linearGradient></defs>
-          <rect x="4" y="36" width="8" height="12" rx="2" fill="url(#navGrad)"/>
-          <rect x="15" y="28" width="8" height="20" rx="2" fill="url(#navGrad)"/>
-          <rect x="26" y="20" width="8" height="28" rx="2" fill="url(#navGrad)"/>
-          <rect x="37" y="12" width="8" height="36" rx="2" fill="url(#navGrad)"/>
-          <path d="M48 6 Q56 6 56 14 L56 48 L48 48 Z" fill="url(#navGrad)"/>
-        </svg>
-        <span>HVAC Cost Guide</span>
+<nav class="site-nav">
+
+  <div class="container site-nav-inner">
+
+    <a href="https://heating.hvacinstallcosts.com" class="site-nav-brand">
+      <svg height="26" viewBox="0 0 56 52" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="navGrad" x1="0" y1="1" x2="0" y2="0">
+            <stop offset="0%" stop-color="#7b2ff7"/>
+            <stop offset="100%" stop-color="#f97316"/>
+          </linearGradient>
+        </defs>
+
+        <rect x="4" y="36" width="8" height="12" rx="2" fill="url(#navGrad)"/>
+        <rect x="15" y="28" width="8" height="20" rx="2" fill="url(#navGrad)"/>
+        <rect x="26" y="20" width="8" height="28" rx="2" fill="url(#navGrad)"/>
+        <rect x="37" y="12" width="8" height="36" rx="2" fill="url(#navGrad)"/>
+        <path d="M48 6 Q56 6 56 14 L56 48 L48 48 Z" fill="url(#navGrad)"/>
+      </svg>
+
+      <span>HVAC Cost Guide</span>
+    </a>
+
+    <div class="site-nav-links">
+      <a href="https://ac.hvacinstallcosts.com">
+        Cooling Guide
       </a>
-      <div class="site-nav-links">
-        <a href="https://ac.hvacinstallcosts.com">Cooling Guide</a>
-        <a href="https://minisplit.hvacinstallcosts.com">Mini-Split</a>
-        <a href="https://heating.hvacinstallcosts.com" class="nav-active">Heating Guide</a>
-        <a href="https://quotes.hvacinstallcosts.com" class="nav-cta">Compare Quotes →</a>
-      </div>
+
+      <a href="https://minisplit.hvacinstallcosts.com">
+        Mini-Split
+      </a>
+
+      <a href="https://heating.hvacinstallcosts.com" class="nav-active">
+        Heating Guide
+      </a>
+
+      <a href="https://quotes.hvacinstallcosts.com" class="nav-cta">
+        Compare Quotes →
+      </a>
     </div>
-  </nav>
+
+    <button class="mobile-menu-btn" onclick="toggleMenu()">
+      ☰
+    </button>
+
+  </div>
+
+  <div class="container">
+    <div class="mobile-drawer" id="mobileDrawer">
+
+      <a href="https://ac.hvacinstallcosts.com">
+        Cooling Guide
+      </a>
+
+      <a href="https://minisplit.hvacinstallcosts.com">
+        Mini-Split
+      </a>
+
+      <a href="https://heating.hvacinstallcosts.com">
+        Heating Guide
+      </a>
+
+      <a href="https://quotes.hvacinstallcosts.com" class="drawer-cta">
+        Compare Quotes →
+      </a>
+
+    </div>
+  </div>
+
+</nav>
 
   <section class="hero">
     <div class="container">
-      <div class="hero-mark">
-        <svg class="hero-mark-icon" height="64" viewBox="0 0 56 52" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="hbarGrad" x1="0" y1="1" x2="0" y2="0"><stop offset="0%" stop-color="#7b2ff7"/><stop offset="100%" stop-color="#f97316"/></linearGradient>
-            <linearGradient id="hswooshGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#c026d3"/><stop offset="100%" stop-color="#f97316"/></linearGradient>
-            <linearGradient id="hswoosh2Grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#9333ea"/><stop offset="100%" stop-color="#ec4899"/></linearGradient>
-          </defs>
-          <rect x="4" y="36" width="8" height="12" rx="2" fill="url(#hbarGrad)"/>
-          <rect x="15" y="28" width="8" height="20" rx="2" fill="url(#hbarGrad)"/>
-          <rect x="26" y="20" width="8" height="28" rx="2" fill="url(#hbarGrad)"/>
-          <rect x="37" y="12" width="8" height="36" rx="2" fill="url(#hbarGrad)"/>
-          <path d="M48 6 Q56 6 56 14 L56 48 L48 48 Z" fill="url(#hbarGrad)"/>
-          <path d="M2 34 Q18 20 46 26" stroke="url(#hswoosh2Grad)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.85"/>
-          <path d="M8 26 Q28 4 52 10 Q58 11 56 6" stroke="url(#hswooshGrad)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
-          <circle cx="55" cy="6" r="3" fill="#f97316"/>
-        </svg>
-        <span class="hero-mark-label">HVAC Cost Guide</span>
-      </div>
-      <div class="section-kicker" style="margin-bottom:12px;">King &amp; Snohomish County</div>
-      <h1>What Should You Pay for Furnace Service?</h1>
-      <p class="hero-sub">Real pricing ranges for Greater King County and North Sound.</p>
+      
+      <div class="section-kicker" style="margin-bottom:12px;">Serving King &amp; Snohomish County</div>
+      <h1>Avoid Overpaying for Furnace Service</h1>
+      <p class="hero-sub">See real local pricing for furnace repair and replacement in Greater King County and North Sound.</p>
       <div class="proof-chips">
         <div class="proof-chip"><span class="dot"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 3l7 4v5c0 5-3.5 7.5-7 9-3.5-1.5-7-4-7-9V7l7-4Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></span>No Info Required</div>
         <div class="proof-chip"><span class="dot"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 19h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M7 15l3-3 3 2 4-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Realistic Ranges</div>
@@ -255,5 +399,6 @@
       window.location.href = 'estimate.html?intent=' + intent;
     }
   </script>
+  <script> function toggleMenu(){ document .getElementById('mobileDrawer') .classList.toggle('open'); } </script>
 </body>
 </html>
