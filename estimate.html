@@ -335,11 +335,27 @@
             <div class="urgent-title">&#9888;&#65039; This may be a safety issue</div>
             <div class="urgent-body">A yellow or orange flame, or a triggered CO alarm, can indicate a cracked heat exchanger or carbon monoxide leak. Turn off your furnace, ventilate your home, and contact a licensed technician immediately. Do not run the system until it has been inspected.</div>
           </div>
-          <div style="margin-top:16px; padding-top:16px; border-top:1px solid var(--border); text-align:center;">
-            <div style="font-size:15px; font-weight:800; color:var(--navy); margin-bottom:4px;">Exact pricing can change based on demand and equipment availability.</div>
-            <div style="font-size:13px; color:var(--navy-soft); margin-bottom:14px;">Verify your estimate with a local installer today.</div>
-            <button class="btn btn-primary" type="button" onclick="showLeadForm('urgent')" id="verifyBtnUrgent" style="width:100%;">Get My Quote &#8594;</button>
-          </div>
+         <div style="margin-top:16px; padding-top:16px; border-top:1px solid var(--border); text-align:center;">
+
+  <div style="font-size:18px; font-weight:800; color:var(--navy); margin-bottom:6px;">
+    Ready for a real quote?
+  </div>
+
+  <div style="font-size:14px; color:var(--navy-soft); margin-bottom:16px;">
+    Connect with a local installer to compare pricing and availability.
+  </div>
+
+  <button class="btn btn-primary"
+    type="button"
+    onclick="showLeadForm()"
+    id="verifyBtn"
+    style="width:100%;">
+
+    Get My Quote &#8594;
+
+  </button>
+
+</div>
           <div id="leadFormWrapUrgent" style="display:none; margin-top:20px;">
             <div class="lead-fields">
               <div class="lead-field"><label class="lead-label" for="urgentFirstName">First name</label><input class="lead-input" type="text" id="urgentFirstName" placeholder="First name" autocomplete="given-name" oninput="updateUrgentSubmit()" /><div class="lead-error" id="urgentFirstNameError"></div></div>
